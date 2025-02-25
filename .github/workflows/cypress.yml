@@ -32,8 +32,9 @@ jobs:
       - name: Start the server
         run: npm run dev && disown
 
-      - name: Wait for Services to Start
-        run: sleep 10  # Give services some time to initialize
+     - name: Wait for Next.js to be Ready
+        run: |
+          timeout 60 sh -c 'until curl -s http://localhost:3000; do sleep 2; done'
 
       - name: Run Cypress Tests (Headed Mode)
         run: npx cypress run --headed --browser chrome 
