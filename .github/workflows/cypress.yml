@@ -3,7 +3,7 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - main
+      - main  # Change to your desired branch
   pull_request:
     branches:
       - main
@@ -29,5 +29,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Cypress Tests with Sorry Cypress
-        run: npx cypress run --record --key dummy-key
+      - name: Wait for Services to Start
+        run: sleep 10  # Give services some time to initialize
+
+      - name: Run Cypress Tests (Headed Mode)
+        run: npx cypress run --headed --browser chrome
