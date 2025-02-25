@@ -32,5 +32,8 @@ jobs:
       - name: Start the server
         run: nohup npm run dev  & disown
 
+      - name: Wait for the server to start
+        run: sleep 10
+
       - name: Run Cypress Tests (Headed Mode)
         run: npx cypress run --headed --browser chrome 
