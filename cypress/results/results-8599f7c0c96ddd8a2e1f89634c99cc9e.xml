@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.658" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-02-25T20:42:39" tests="0" file="cypress/e2e/test.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Home Page Counter Test" timestamp="2025-02-25T20:42:39" tests="3" time="1.654" failures="0">
+    <testcase name="Home Page Counter Test should display the correct initial counter value" time="0.569" classname="should display the correct initial counter value">
+    </testcase>
+    <testcase name="Home Page Counter Test should increment the counter when the button is clicked" time="0.444" classname="should increment the counter when the button is clicked">
+    </testcase>
+    <testcase name="Home Page Counter Test should increment multiple times" time="0.572" classname="should increment multiple times">
+    </testcase>
+  </testsuite>
+</testsuites>

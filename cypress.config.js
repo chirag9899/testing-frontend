@@ -28,6 +28,6 @@ module.exports = defineConfig({
       toConsole: true,
       dashboardUrl: "https://active-fred-hybrid-aspects.trycloudflare.com", 
     },
-    projectId: "chirag0264"
+    projectId: "chirag0264" // use env variable
   },
 });
