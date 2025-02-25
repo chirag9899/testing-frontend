@@ -17,12 +17,12 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "http://localhost:3000", // Your Next.js app
+    baseUrl: "http://localhost:3000",
     viewportWidth: 1280,
     viewportHeight: 720,
     video: false,
     retries: 2,
-    reporter: "junit", // Use Mocha for Sorry Cypress
+    reporter: "junit", 
     reporterOptions: {
       mochaFile: "cypress/results/results-[hash].xml",
       toConsole: true,
