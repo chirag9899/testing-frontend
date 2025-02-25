@@ -1,14 +1,30 @@
+// const { defineConfig } = require("cypress");
+
+// module.exports = defineConfig({
+//   e2e: {
+//     baseUrl: "http://localhost:3000", 
+//     viewportWidth: 1280,
+//     viewportHeight: 720,
+//     video: false,
+//     retries: 2,
+//     reporterOptions: {
+//       dashboardUrl: "http://localhost:8080",
+//     },
+//   },
+// });
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "http://localhost:3000", 
+    baseUrl: "http://localhost:3000", // Your Next.js app
     viewportWidth: 1280,
     viewportHeight: 720,
     video: false,
     retries: 2,
+    reporter: "mocha", // Use Mocha for Sorry Cypress
     reporterOptions: {
-      dashboardUrl: "http://localhost:8080",
+      dashboardUrl: "http://localhost:8080", // URL of Sorry Cypress Dashboard
     },
   },
 });
