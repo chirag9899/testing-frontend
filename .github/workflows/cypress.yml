@@ -3,7 +3,7 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - main  # Change to your desired branch
+      - main  
   pull_request:
     branches:
       - main

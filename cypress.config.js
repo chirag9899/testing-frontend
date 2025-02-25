@@ -7,7 +7,6 @@ module.exports = defineConfig({
     viewportHeight: 720,
     video: false,
     retries: 2,
-    reporter: "cypress-cloud",
     reporterOptions: {
       dashboardUrl: "http://localhost:8080",
     },
