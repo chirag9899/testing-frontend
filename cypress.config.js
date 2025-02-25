@@ -24,7 +24,8 @@ module.exports = defineConfig({
     retries: 2,
     reporter: "mocha", // Use Mocha for Sorry Cypress
     reporterOptions: {
-      dashboardUrl: "http://localhost:8080", // URL of Sorry Cypress Dashboard
+      dashboardUrl: "https://active-fred-hybrid-aspects.trycloudflare.com", 
     },
+    projectId: "chirag0264"
   },
 });
