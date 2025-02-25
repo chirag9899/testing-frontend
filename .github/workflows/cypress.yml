@@ -30,10 +30,10 @@ jobs:
         run: npm install
 
       - name: Start the server
-        run: npm run dev
+        run: npm run dev && disown
 
       - name: Wait for Services to Start
         run: sleep 10  # Give services some time to initialize
 
       - name: Run Cypress Tests (Headed Mode)
-        run: npx cypress run --headed --browser chrome
+        run: npx cypress run --headed --browser chrome 
