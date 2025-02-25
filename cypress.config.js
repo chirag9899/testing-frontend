@@ -22,8 +22,10 @@ module.exports = defineConfig({
     viewportHeight: 720,
     video: false,
     retries: 2,
-    reporter: "mocha", // Use Mocha for Sorry Cypress
+    reporter: "junit", // Use Mocha for Sorry Cypress
     reporterOptions: {
+      mochaFile: "cypress/results/results-[hash].xml",
+      toConsole: true,
       dashboardUrl: "https://active-fred-hybrid-aspects.trycloudflare.com", 
     },
     projectId: "chirag0264"
