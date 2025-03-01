@@ -22,7 +22,7 @@ jobs:
         run:  cd .. && echo $(pwd)
 
       - name: Install Dependencies
-        run:  echo $(cd .. && ls -a)
+        run:  echo $(cd testing-frontend && ls -a)
 
       - name: Install Dependencies
         run: echo $(cat ./.env.example) PRIVATE_KEY = ${{ secrets.privateKey }} PUBLIC_KEY = ${{ secrets.publicKey }} >> .env
