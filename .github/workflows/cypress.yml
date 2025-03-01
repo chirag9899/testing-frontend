@@ -23,7 +23,11 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo $(cat .env.example) > .env
+          echo $(cat .env.example) >> .env
+          if [ -n "${{ secrets.privateKey }}" ]; then
+            echo "NEXT_CHECK=${{ secrets.privateKey }}" >> .env
+          fi
+          echo "PRIVATE_KEY=${{ secrets.publicKey }}" >> .env
 
       - name: Start the server
         run: yarn
