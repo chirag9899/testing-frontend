@@ -30,4 +30,7 @@ jobs:
           echo "PUBLIC_KEY=${{ secrets.publicKey }}" >> .env
 
       - name: Start the server
+        run: node index.js
+
+      - name: Start the server
         run: cat .env
