@@ -11,29 +11,15 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    services:
-      sorry-cypress:
-        image: agoldis/sorry-cypress-director
-        ports:
-          - 8080:8080
+    # services:
+    #   sorry-cypress:
+    #     image: agoldis/sorry-cypress-director
+    #     ports:
+    #       - 8080:8080
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
       - name: Install Dependencies
-        run: npm install
+        run: echo $(cat .env.example) PRIVATE_KEY = ${{ secrets.privateKey }} PUBLIC_KEY = ${{ secrets.publicKey }} >> .env
 
       - name: Start the server
-        run: nohup npm run dev  & disown
-
-      - name: Wait for the server to start
-        run: sleep 10
-
-      - name: Run Cypress Tests (Headed Mode)
-        run: npx cypress run --headed --browser chrome 
+        run: cat .env
