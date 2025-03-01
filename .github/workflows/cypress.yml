@@ -23,7 +23,7 @@ jobs:
         run:  echo $(ls -a)
 
       - name: Install Dependencies
-        run: echo $(cat ./.env.example) PRIVATE_KEY = ${{ secrets.privateKey }} PUBLIC_KEY = ${{ secrets.publicKey }} >> .env
+        run: echo $(cat ./.env.example) PRIVATE_KEY = ${{ secrets.PRIVATEKEY }} PUBLIC_KEY = ${{ secrets.PUBLICKEY }} >> .env
 
       - name: Start the server
         run: cat .env
