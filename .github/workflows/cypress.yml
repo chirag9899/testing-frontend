@@ -12,7 +12,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     environment: privateKey
-    # services:
+    # services:test
     #   sorry-cypress:
     #     image: agoldis/sorry-cypress-director
     #     ports:
