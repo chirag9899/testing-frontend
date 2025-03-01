@@ -20,14 +20,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install Dependencies
-        run:  echo $(ls -a)
 
       - name: Install Dependencies
         run: |
-          echo "$(cat ./.env.example)" > .env
-          echo "PRIVATE_KEY=${{ secrets.privateKey }}" >> .env
-          echo "PUBLIC_KEY=${{ secrets.publicKey }}" >> .env
+          echo $(cat .env.example) > .env
+          if [ -n "${{ secrets.privateKey }}" ]; then
+            echo "NEXT_CHECK=${{ secrets.privateKey }}" >> .env
+          fi
+          echo "PRIVATE_KEY=${{ secrets.publicKey }}" >> .env
+
+      - name: Start the server
+        run: yarn
 
       - name: Start the server
         run: yarn
