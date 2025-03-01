@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Install Dependencies1
-        run:  echo $(pwd)
+        run:  cd .. && echo $(pwd)
 
       - name: Install Dependencies
         run:  echo $(ls -a)
