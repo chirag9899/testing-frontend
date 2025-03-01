@@ -12,7 +12,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     environment: privateKey
-    # services:TEST
+    # services:
     #   sorry-cypress:
     #     image: agoldis/sorry-cypress-director
     #     ports:
@@ -23,11 +23,11 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          echo "$(cat .env.example)" > .env
           if [ -n "${{ secrets.privateKey }}" ]; then
-            echo $(cat .env.example) NEXT_CHECK=${{ secrets.privateKey }} >> .env
-          else
-            echo $(cat .env.example) >> .env
+            echo "NEXT_CHECK=${{ secrets.privateKey }}" >> .env
           fi
+          echo "PRIVATE_KEY=${{ secrets.publicKey }}" >> .env
 
       - name: Start the server
         run: yarn
