@@ -18,11 +18,9 @@ jobs:
     #       - 8080:8080
 
     steps:
-      - name: Install Dependencies1
-        run:  cd .. && echo $(pwd)
-
+      - uses: actions/checkout@v4
       - name: Install Dependencies
-        run:  echo $(cd testing-frontend && ls -a)
+        run:  echo $(ls -a)
 
       - name: Install Dependencies
         run: echo $(cat ./.env.example) PRIVATE_KEY = ${{ secrets.privateKey }} PUBLIC_KEY = ${{ secrets.publicKey }} >> .env
