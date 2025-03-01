@@ -18,8 +18,18 @@ jobs:
     #       - 8080:8080
 
     steps:
+      - name: Install Dependencies1
+        run:  echo $(pwd)
+
       - name: Install Dependencies
         run:  echo $(ls -a)
+
+      - name: Check .env.example file
+        run: |
+          if [ ! -f ./.env.example ]; then
+            echo ".env.example file not found!"
+            exit 1
+          fi
 
       - name: Install Dependencies
         run: echo $(cat ./.env.example) PRIVATE_KEY = ${{ secrets.privateKey }} PUBLIC_KEY = ${{ secrets.publicKey }} >> .env
